@@ -32,7 +32,7 @@ textarea {
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: auto;
   border-top: 1px solid white;
 }
 
@@ -40,6 +40,8 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
+  display: flex;
+  align-items: center;
 }
 
 .past {
@@ -50,6 +52,7 @@ textarea {
 .present {
   background-color: #ff6961;
   color: white;
+  font-weight: bold;
 }
 
 .future {
@@ -68,4 +71,9 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.saveBtn i {
+  display: flex;
+  justify-content: center;
 }
