@@ -1,7 +1,7 @@
 // Display the current date and check for previously saved user input upon page loading
 
 var timeDisplayEl = $("#currentDay");
-var textInputs = $('.description');
+var textInput = $('.description');
 renderText();
 
 // Timer function
@@ -43,10 +43,57 @@ $('.saveBtn').on('click', function(){
     updateLocalMemory(saveObject);
 });
 
+// Select input for the parallel hour save button and return that input
+
+function getText(selectedHour){
+    var hour = selectedHour;
+    for(var i=0; i<textInput.length; i++){
+        var compareTime = parseInt(textInputs[i].id);
+        if(compareTime === hour){
+            return textInput[i].value;
+        }
+    }
+
+// Update to local storage
+
 function updateLocalMemory(saveObject){
     localStorage.setItem(saveObject.time, saveObject.description);
     renderText();
 }
+
+// Loop over cells
+// Get value for current cell
+// Select text area which corresponds with current cell
+// Display text
+
+function renderText(){
+    let cells = Object.keys(localStorage);
+
+    for(var i=0; i<cells.length;i++) {
+        var textContent = window.localStorage.getItem(cells[i]);
+        var textElement = findText(parseInt(cells[i]));
+        textElement.value = textContent;
+    }
+}
+
+function findText(key){ //take the key and find the textarea with the matching id
+    var textEls = $('.description');
+    for(var i=0; i<textEls.length;i++){
+        id = parseInt(textEls[i].id);
+        if(id === key )
+        return textEls[i];
+    }
+    
+}
+
+$("#reset").on("click", function(){ //clear local storage and text inputs
+    localStorage.clear();
+    var clearText = $('.description');
+    for(var i=0; i<clearText.length; i++){
+        clearText[i].value="";
+    }
+    renderText();
+})
 
 
     // time.each(function(i, element){

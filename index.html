@@ -4,11 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="assets/style.css"
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-
     />
     <link
       rel="stylesheet"
@@ -20,7 +18,9 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    
+
     <title>Work Day Scheduler</title>
   </head>
 
@@ -30,99 +30,84 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container time-block">
+
       <!-- Timeblocks go here -->
 
-      <!-- 09:00 -->
-      <div class="row time-block" id="9am">
-        <div class="col-sm-1 hour">09:00</div>
-        <textarea class="col-sm-10 description">
-        </textarea>
-        <button class="col-sm-1 saveBtn btn">
-          <i class="fas fa-save fa-lg"></i>
-        </button>
-      </div>
+        <!--9am-->
+        <div class="row">
+          <div class="col-1 hour">9am</div>
+          <textarea id="9" class="col-10 description"></textarea>
+          <button id ="save-9" class="col-1 saveBtn btn">
+          <i class="fas fa-save fa-lg"></i></button>
+        </div>
 
-      <!-- 10:00 -->
-      <div class="row time-block" id="10am">
-        <div class="col-sm-1 hour">10:00</div>
-        <textarea class="col-sm-10 description">
-        </textarea>
-        <button class="col-sm-1 saveBtn btn">
-          <i class="fas fa-save fa-lg"></i>
-        </button>
-      </div>
+        <!--10am-->
+        <div class="row">
+          <div class="col-1 hour">10am</div>
+          <textarea id="10" class="col-10 description"></textarea>
+          <button id ="save-10" class="col-1 saveBtn btn">
+          <i class="fas fa-save fa-lg"></i></button>
+        </div>
 
-      <!-- 11:00 -->
-      <div class="row time-block" id="11am">
-        <div class="col-sm-1 hour">11:00</div>
-        <textarea class="col-sm-10 description">
-        </textarea>
-        <button class="col-sm-1 saveBtn btn">
-          <i class="fas fa-save fa-lg"></i>
-        </button>
-      </div>
+        <!--11am-->
+        <div class="row">
+          <div class="col-1 hour">11am</div>
+          <textarea id="11" class="col-10 description"></textarea>
+          <button id ="save-11" class="col-1 saveBtn btn">
+          <i class="fas fa-save fa-lg"></i></button>
+        </div>
 
-      <!-- 12:00 -->
-      <div class="row time-block" id="12pm">
-        <div class="col-sm-1 hour">12:00</div>
-        <textarea class="col-sm-10 description">
-        </textarea>
-        <button class="col-sm-1 saveBtn btn">
-          <i class="fas fa-save fa-lg"></i>
-        </button>
-      </div>
+        <!--12pm-->
+        <div class="row">
+          <div class="col-1 hour">12pm</div>
+          <textarea id="12" class="col-10 description"></textarea>
+          <button id ="save-12" class="col-1 saveBtn btn">
+          <i class="fas fa-save fa-lg"></i></button>
+        </div>
 
-      <!-- 13:00 -->
-      <div class="row time-block" id="1pm">
-        <div class="col-sm-1 hour">13:00</div>
-        <textarea class="col-sm-10 description">
-        </textarea>
-        <button class="col-sm-1 saveBtn btn">
-          <i class="fas fa-save fa-lg"></i>
-        </button>
-      </div>
+        <!--1pm-->
+        <div class="row">
+          <div class="col-1 hour">1pm</div>
+          <textarea id="13" class="col-10 description"></textarea>
+          <button id ="save-13" class="col-1 saveBtn btn">
+          <i class="fas fa-save fa-lg"></i></button>
+        </div>
 
-      <!-- 14:00 -->
-      <div class="row time-block" id="2pm">
-        <div class="col-sm-1 hour">14:00</div>
-        <textarea class="col-sm-10 description">
-        </textarea>
-        <button class="col-sm-1 saveBtn btn">
-          <i class="fas fa-save fa-lg"></i>
-        </button>
-      </div>
+        <!--2pm-->
+        <div class="row">
+          <div class="col-1 hour">2pm</div>
+          <textarea id="14" class="col-10 description"></textarea>
+          <button id ="save-14" class="col-1 saveBtn btn">
+          <i class="fas fa-save fa-lg"></i></button>
+        </div>
 
-      <!-- 15:00 -->
-      <div class="row time-block" id="3pm">
-        <div class="col-sm-1 hour">15:00</div>
-        <textarea class="col-sm-10 description">
-        </textarea>
-        <button class="col-sm-1 saveBtn btn">
-          <i class="fas fa-save fa-lg"></i>
-        </button>
-      </div>
+        <!--3pm-->
+        <div class="row">
+          <div class="col-1 hour">3pm</div>
+          <textarea id="15" class="col-10 description"></textarea>
+          <button id ="save-15" class="col-1 saveBtn btn">
+          <i class="fas fa-save fa-lg"></i></button>
+        </div>
 
-      <!-- 16:00 -->
-      <div class="row time-block" id="4pm">
-        <div class="col-sm-1 hour">16:00</div>
-        <textarea class="col-sm-10 description">
-        </textarea>
-        <button class="col-sm-1 saveBtn btn">
-          <i class="fas fa-save fa-lg"></i>
-        </button>
-      </div>
+        <!--4pm-->
+        <div class="row">
+          <div class="col-1 hour">4pm</div>
+          <textarea id="16" class="col-10 description"></textarea>
+          <button id ="save-16" class="col-1 saveBtn btn">
+          <i class="fas fa-save fa-lg"></i></button>
+        </div>
 
-      <!-- 17:00 -->
-      <div class="row time-block" id="5pm">
-        <div class="col-sm-1 hour">17:00</div>
-        <textarea class="col-sm-10 description">
-        </textarea>
-        <button class="col-sm-1 saveBtn btn">
-          <i class="fas fa-save fa-lg"></i>
-        </button>
-      </div>
-    
+        <!--5pm-->
+        <div class="row">
+          <div class="col-1 hour">5pm</div>
+          <textarea id="17" class="col-10 description"></textarea>
+          <button id ="save-17" class="col-1 saveBtn btn">
+          <i class="fas fa-save fa-lg"></i></button>
+        </div>
+
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/script.js"></script>
