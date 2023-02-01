@@ -29,6 +29,24 @@ for (var i=0; i<rows.length; i++){
     } else {
         setColor.setAttribute('class', 'present col-10 description');
     }
+}
+
+// Save button click function to save to local storage
+
+$('.saveBtn').on('click', function(){
+    var savedHour = parseIn(this.id);
+    var savedText = getText(savedHour);
+    var saveObject = {
+        time: savedHour,
+        description: savedText
+    }
+    updateLocalMemory(saveObject);
+});
+
+function updateLocalMemory(saveObject){
+    localStorage.setItem(saveObject.time, saveObject.description);
+    renderText();
+}
 
 
     // time.each(function(i, element){
@@ -49,15 +67,5 @@ for (var i=0; i<rows.length; i++){
     //     if(description) {
     //         $(element).children(".description").val(description);
     //     }
-    // });
-
-    // $('.saveBtn').on('click', function(){
-    //     var hourSaved = parseIn(this.id);
-    //     var textToSave = getText(hourSaved);
-    //     var saveObject = {
-    //         time: hourSaved,
-    //         description: textToSave
-    //     }
-    //     updateLocalMemory(saveObject);
     // });
 
