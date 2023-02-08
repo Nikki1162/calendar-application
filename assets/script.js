@@ -5,7 +5,7 @@ const currentHour = moment().hour();
 // Use Moment.JS to set the current date (and maybe time) at the top of the calendar page
 
 function timer() { 
-  let currentDay = moment().format('dddd DD MMM, YYYY');
+  let currentDay = moment().format('dddd DD MMM, YYYY, hh:mm');
   $("#currentDay").text(currentDay);
 }
 
@@ -45,3 +45,24 @@ saveButton.on("click", function(event) {
   let hour = $(event.currentTarget).parent().first().text().trim();
   localStorage.setItem(hour, description);
 });
+
+// Implement a 'clear schedule' button to allow the user to empty their entire schedule
+
+$(".clearSchedule").on("click", function () {
+  let deleteConfirm = confirm("Do you want to clear today's schedule?")
+
+  // If statement to determine whether to clear schedule, or keep events on schedule
+
+  // If user confirms, page reloads with empty schedule
+
+  if (deleteConfirm === true) {
+      localStorage.clear()
+      location.reload();
+  } 
+
+  // If user clicks cancel, page does not reload and user is alerted that no events were cleared from their schedule
+  
+  else {
+      alert("Schedule not cleared")
+  }
+})
