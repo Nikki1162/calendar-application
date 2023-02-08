@@ -42,25 +42,26 @@ textarea {
 
 .hour {
   background-color: #ffffff;
-  color: #000000;
+  font-style: italic;
+  color: #798b76;
   border-top: 1px dashed black;
   display: flex;
-  align-items: center;
+  align-items:flex-end
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #b3b3b3;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #ad2019;
   color: white;
   font-weight: bold;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #107e3e;
   color: white;
 }
 
@@ -84,14 +85,15 @@ textarea {
   justify-content: center;
 }
 
-.clearAll {
+.clearSchedule {
+  float: inline-end;
   font-size: 12px;
   border-radius: 2px;
-  margin-top: 5020px;
+  margin-top: 20px;
   padding: 10px 20px;
 }
 
-.clearAll:hover {
+.clearSchedule:hover {
   background-color: red;
-  border-radius: 2px;
+  text-transform: uppercase;
 }
