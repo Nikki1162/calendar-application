@@ -1,48 +1,47 @@
-var submitButton = $(".saveButton");
-var time = $(".time-block");
-var currentHours = moment().hour();
+const saveButton = $(".saveBtn");
+const time = $(".time-block");
+const currentHour = moment().hour();
 
-// Display date and time at the top of the page
+// Use Moment.JS to set the current date (and maybe time) at the top of the calendar page
 
-function timer() {
-    let currentDay = moment().format('dddd Do MMM YYYY, HH:mm:ss');
-    $("#currentDay").text(currentDay); 
-  }
-  setInterval(timer, 1000);
+function timer() { 
+  let currentDay = moment().format('dddd DD MMM, YYYY');
+  $("#currentDay").text(currentDay);
+}
 
-// Function to loop over timeblocks and display correct colour depending on the current hour
+setInterval(timer, 1000);
+
+// Use if else statement to determine which colour is set according to which current hour is 'true' - assign classes to change to corresponding colours
+
 time.each(function (i, element){
-    let elementTime = Number(element.id);
-  
-    if (elementTime === currentHours) {
-      $(element).children(".description").addClass("present");
-    } else if (elementTime > currentHours) {
-      $(element).children(".description").addClass("future");
-    } else {
-      $(element).children(".description").addClass("past");
-    }
+  let elementTime = Number(element.id);
 
-// Function to save user input in text field to local storage
+  if (elementTime === currentHour) {
+    $(element).children(".description").addClass("present");
+  } 
+  else if (elementTime > currentHour) {
+    $(element).children(".description").addClass("future");
+  } 
+  else {
+    $(element).children(".description").addClass("past");
+  }
 
-$(".saveButton").on("click", function () {
-    let itemTime = $(this).siblings(".hour").text()
-    let itemDescription = $(this).siblings(".description").val()
-    localStorage.setItem(itemTime, itemDescription)
-})
+  let hour = $(element).first().text().trim();
+  let description = localStorage.getItem(hour);
 
-// Function to retrieve the value inputted by the user from local storage and display in the timeblock it was entered into
+  if(description) {
+    $(element).children(".description").val(description);
+  }
+});
 
-function retrieveEvent() {
-    $(".hour").each(function () {
-      let hourBlockLab
+// Save button to transfer user input to local storage - able to retrieve both the description and the hour timeblock it was inputted into
 
-    })
+saveButton.on("click", function(event) {
+  let description = $(event.currentTarget)
+  .parent()
+  .children(".description")
+  .val();
 
-// Call function to display corresponding colours with timeblocks
-
-timeBlockState();
-
-// Calling the retrieveEvent function to display the saved events
-
-retrieveEvent();
-})
+  let hour = $(event.currentTarget).parent().first().text().trim();
+  localStorage.setItem(hour, description);
+});
